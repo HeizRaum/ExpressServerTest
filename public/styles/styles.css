@@ -4,14 +4,15 @@ body {
   margin: 0;
 }
 
-nav {
+nav.mainNav {
   background-color: #bb0303;
   display: flex;
   width: 100%;
   height: auto;
   overflow: auto;
   align-items: center;
-  position: fixed;
+  justify-content: center;
+  box-shadow: 0 3px 3px #B3B3B3;
 }
 
 nav .mainLogo {
@@ -24,44 +25,65 @@ nav .mainLogo {
   font-weight: 800;
   font-size: 18pt;
   float: left;
-  width: 30%;
-}
-
-.navTitle {
-  width: 70%;
-}
-
-.navButtons {
-  width: 70%;
-  display: flex;
-  justify-content: right;
 }
 
 .logo {
   padding: 0.5em;
 }
 
-.button {
+div.cardContainer {
+  display: flex;
+  margin: 3rem;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+div.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  margin: 1rem;
+  border: solid #bb0303;
+  border-radius: 25px;
+  min-width: 8rem;
+
+  transition: all 0.3s;
+}
+div.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 3px #B3B3B3;
+}
+
+p.cardTitle {
+  text-align: center;
+  font-family: 'Open Sans';
+  font-weight: 800;
+  font-size: 16pt;
+}
+
+a.cardButton {
+  user-select: none;
   appearance: button;
+  cursor: initial;
 
-  font-family: "Open Sans";
-  margin: 0.5em;
-  padding: 0.5em 1em;
-  background-color: #FFFFFF;
-  color: initial;
-  border-radius: 10px;
-  outline: none;
-  border: none;
-  box-shadow: 0 3px 0 #B3B3B3;
   text-decoration: none;
-  display: inline-flex;
-}
 
-.button:hover {
   outline: none;
+  background-color: #FFFFFF;
+  border: solid 2px #B3B3B3;
+  font-family: 'Open Sans';
+  font-size: 16pt;
+  color: initial;
+  margin: 1rem;
+  padding: 0.5rem;
+  box-shadow: 0 3px 0 #B3B3B3;
+  border-radius: 10px;
+
+  transition: all 3ms;
 }
 
-.button:active {
+a.cardButton:active {
   box-shadow: none;
   transform: translateY(3px);
 }

@@ -14,18 +14,31 @@
 </head>
 
 <body>
-  <nav>
+  <nav class="mainNav">
     <a class="mainLogo" href="/">
       <div class="logo" style="width: 30; height: 30;">
         <i class="fas fa-meteor fa-2x" style="color: #FFFFFF;"></i>
       </div>
       Express-Server-Test
     </a>
-    <div class="navButtons">
-      <a class="button" href="/countries">Countries</a>
-      <a class="button" href="/cities">Cities</a>
-      <a class="button" href="/names">Names</a>
-    </div>
   </nav>
+
+  <div class="cardContainer">
+    <div class="card">
+      <p class="cardTitle">Countries</p>
+      <i class="fas fa-globe-africa" style="font-size: 32pt;"></i>
+      <a class="cardButton" href="/countries">See more</a>
+    </div>
+    <div class="card">
+      <p class="cardTitle">Names</p>
+      <i class="fas fa-walking" style="font-size: 32pt;"></i>
+      <a class="cardButton" href="/names">See more</a>
+    </div>
+    <div class="card">
+      <p class="cardTitle">Cities</p>
+      <i class="fas fa-city" style="font-size: 32pt;"></i>
+      <a class="cardButton" href="/cities">See more</a>
+    </div>
+  </div>
 </body>
 </html>
