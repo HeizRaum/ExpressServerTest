@@ -1,3 +1,4 @@
+const database = require('./database.js');
 const express = require('express');
 const fs = require('fs');
 const application = express();
@@ -21,6 +22,11 @@ application.get('/names', (request, response) => {
 
 application.get('/cities', (request, response) => {
   response.sendFile(__dirname + '/public/cities.html');
+  if (Object.keys(request.query).length !== 0) {
+    if(request.query.cities === 'all') {
+      response.send('sending all cities!');
+    }
+  }
 });
 
 application.listen(port, () => {
