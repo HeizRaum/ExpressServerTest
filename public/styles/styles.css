@@ -71,13 +71,13 @@ a.cardButton {
 
   outline: none;
   background-color: #FFFFFF;
-  border: solid 2px #B3B3B3;
+  border: solid 2px #bb0303;
   font-family: 'Open Sans';
   font-size: 16pt;
   color: initial;
   margin: 1rem;
   padding: 0.5rem;
-  box-shadow: 0 3px 0 #B3B3B3;
+  box-shadow: 0 3px 0 #bb0303;
   border-radius: 10px;
 
   transition: all 3ms;
