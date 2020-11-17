@@ -93,6 +93,14 @@ a.cardButton:active {
   transform: translateY(3px);
 }
 
+a.disabled {
+  box-shadow: none;
+  border: solid 2px #B3B3B3;
+  color: #B3B3B3;
+  transform: translateY(3px);
+}
+a.disabled:active {}
+
 button.searchButton {
   outline: none;
   background-color: #FFFFFF;
@@ -110,6 +118,12 @@ button.searchButton {
 button.searchButton:active {
   box-shadow: none;
   transform: translateY(3px);
+}
+
+button.gray {
+  border: solid 2px#B3B3B3;
+  color: #979797;
+  box-shadow: 0 3px 0 #B3B3B3;
 }
 
 input.addInput {

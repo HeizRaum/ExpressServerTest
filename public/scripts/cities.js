@@ -64,7 +64,7 @@ function updateListView() {
     listName.textContent = cities.object[entry].name;
 
     let deleteButton = document.createElement('button');
-    deleteButton.classList = 'searchButton';
+    deleteButton.classList = 'searchButton gray';
     let trashIcon = document.createElement('i');
     trashIcon.classList = 'fas fa-trash-alt';
     trashIcon.style.fontSize = '24pt';
