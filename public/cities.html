@@ -11,7 +11,7 @@
   <script defer src="https://pro.fontawesome.com/releases/v5.10.0/js/all.js"
     integrity="sha384-G/ZR3ntz68JZrH4pfPJyRbjW+c0+ojii5f+GYiYwldYU69A+Ejat6yIfLSxljXxD" crossorigin="anonymous" />
   </script>
-  <script rel="text/javascript" src="scripts/cities.js"></script>
+  <script rel="text/javascript" src="scripts/cities.js" ></script>
 </head>
 
 <body>
@@ -23,7 +23,11 @@
       Express-Server-Test
     </a>
   </nav>
-  <input id="input" />
-  <button onclick="sendToServer(input)">Send to server</button>
+  <div class="inputBox">
+    <input id="input" class="addInput" placeholder="Add a new city..."/>
+    <button onclick="sendToServer(input)" class="searchButton">Send to server</button>
+  </div>
+  <div class="cardContainer" id="cityList">
+  </div>
 </body>
 </html>

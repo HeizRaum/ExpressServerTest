@@ -55,6 +55,12 @@ div.card:hover {
   box-shadow: 0 5px 3px #B3B3B3;
 }
 
+div.inputBox {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
 p.cardTitle {
   text-align: center;
   font-family: 'Open Sans';
@@ -82,8 +88,39 @@ a.cardButton {
 
   transition: all 3ms;
 }
-
 a.cardButton:active {
   box-shadow: none;
   transform: translateY(3px);
+}
+
+button.searchButton {
+  outline: none;
+  background-color: #FFFFFF;
+  border: solid 2px #bb0303;
+  font-family: 'Open Sans';
+  font-size: 16pt;
+  color: initial;
+  margin: 1rem;
+  padding: 0.5rem;
+  box-shadow: 0 3px 0 #bb0303;
+  border-radius: 10px;
+
+  transition: all 3ms;
+}
+button.searchButton:active {
+  box-shadow: none;
+  transform: translateY(3px);
+}
+
+input.addInput {
+  outline: none;
+  background-color: #FFFFFF;
+  border: solid 2px #bb0303;
+  font-family: 'Open Sans';
+  font-size: 16pt;
+  color: initial;
+  margin: 1rem;
+  padding: 0.5rem;
+  border-radius: 10px;
+  transform: translateY(3px)
 }
