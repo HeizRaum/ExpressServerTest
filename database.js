@@ -28,12 +28,13 @@ async function openDatabase() {
     name TEXT NOT NULL
   );
   `);
+  await database.close();
 })();
 
 async function getCities(callback) {
   const database = await openDatabase();
   const result = await database.all('SELECT id, name FROM cities;');
-  
+
   callback(result);
 }
 
@@ -47,8 +48,23 @@ function addCity(city) {
     `,
       Object.values(cityCount)[0],
       city);
+    await database.close();
+  })();
+}
+
+function removeCity(city) {
+  (async () => {
+    const database = await openDatabase();
+
+    await database.run(`
+      DELETE FROM cities WHERE
+        name = ?;
+    `,
+      city);
+    await database.close();
   })();
 }
 
 module.exports.getCities = getCities;
 module.exports.addCity = addCity;
+module.exports.removeCity = removeCity;

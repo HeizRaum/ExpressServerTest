@@ -35,10 +35,10 @@ function getCitiesFromServer() {
   xhttp.send();
 }
 
-function sendToServer(input) {
+function sendCityToServer(input) {
   const xhttp = new XMLHttpRequest();
 
-  xhttp.open('POST', '/cities', true);
+  xhttp.open('POST', '/cities?action=add', true);
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       getCitiesFromServer();
@@ -47,6 +47,20 @@ function sendToServer(input) {
   xhttp.setRequestHeader('Content-Type', 'application/json');
   xhttp.send(JSON.stringify({
     'city': input.value
+  }));
+}
+
+function removeCityFromDatabase(cityName) {
+  const xhttp = new XMLHttpRequest();
+  xhttp.open('POST', '/cities?action=delete');
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      getCitiesFromServer();
+    }
+  };
+  xhttp.setRequestHeader('Content-Type', 'application/json');
+  xhttp.send(JSON.stringify({
+    'city': cityName
   }));
 }
 
@@ -65,11 +79,15 @@ function updateListView() {
 
     let deleteButton = document.createElement('button');
     deleteButton.classList = 'searchButton gray';
+    deleteButton.onclick = () => {
+      removeCityFromDatabase(listName.textContent);
+    };
+
     let trashIcon = document.createElement('i');
     trashIcon.classList = 'fas fa-trash-alt';
     trashIcon.style.fontSize = '24pt';
     deleteButton.appendChild(trashIcon);
-    
+
     listElement.appendChild(listName);
     listElement.appendChild(deleteButton);
     list.appendChild(listElement);

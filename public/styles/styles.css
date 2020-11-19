@@ -42,11 +42,13 @@ div.card {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   padding: 1rem;
   margin: 1rem;
   border: solid #bb0303;
   border-radius: 25px;
-  min-width: 8rem;
+  min-width: 12rem;
+  max-width: 20rem;
 
   transition: all 0.3s;
 }
@@ -68,10 +70,17 @@ p.cardTitle {
   font-size: 16pt;
 }
 
+p.cardContent {
+  padding: 0.5rem;
+  text-align: center;
+  font-family: 'Open Sans';
+  font-size: 14pt;
+}
+
 a.cardButton {
   user-select: none;
   appearance: button;
-  cursor: initial;
+  cursor: pointer;
 
   text-decoration: none;
 

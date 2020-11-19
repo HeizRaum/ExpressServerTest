@@ -17,7 +17,7 @@ application.get('/countries', (request, response) => {
 
 application.get('/names', (request, response) => {
   response.sendFile(__dirname + '/public/names.html');
-  console.log(request.route);
+
 });
 
 application.get('/cities', asyncWrapper(async (request, response) => {
@@ -33,8 +33,21 @@ application.get('/cities', asyncWrapper(async (request, response) => {
 }));
 
 application.post('/cities', (request, response) => {
-  database.addCity(request.body.city);
-  response.send('OK');
+  if(Object.keys(request.query).length !== 0) {
+    switch(request.query.action) {
+      case 'add':
+        database.addCity(request.body.city);
+        response.send('OK');
+      break;
+      case 'delete':
+        database.removeCity(request.body.city);
+        response.send('OK');
+      break;
+      default:
+        response.send('ERROR');
+    }
+  }
+  
 });
 
 application.listen(port, () => {
